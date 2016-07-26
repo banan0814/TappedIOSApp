@@ -11,14 +11,13 @@ import UIKit
 
 class TableViewController: UITableViewController {
     var names = [String]()
-    var identities = [String]()
     var  texts = [String]()
     var simpleLabel = UILabel()
     
     override func viewDidLoad() {
         names = ["Első Hír","Második Hír","Harmadik hír","Negyedik hír"]
-        identities = ["1"]
-        texts = ["Első szöveg aminek a textboxba kell kerülni","masodik szöveg aminek a textboxba kell kerülni","harmadik szöveg aminek a textboxba kell kerülni","semmi"]
+        texts = ["Első hír helye mely egy nagyon husszú hírnek ígyérkezik így akár az is lehet hogy több soros lesz de ezt senkisem tudhatja sadsagdhsadhbsahgdf ghsafdhasfdash dghsadjfsa sdashdbsyd asdhsa dasdas dsahdbas dsahdas das dgas","Második hír helye","Harmadik hír helye",""]
+
     }
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return names.count
@@ -31,16 +30,16 @@ class TableViewController: UITableViewController {
         
         return cell!
     }
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //let vcName = identities[indexPath.row]
-        simpleLabel.text = texts[indexPath.row]
-        simpleLabel.sizeToFit()
-        
-        let viewController = storyboard?.instantiateViewControllerWithIdentifier("1")
-            self.navigationController?.pushViewController(viewController!, animated: true)
-        
-        viewController!.view.addSubview(simpleLabel)
-
-    }
+   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     
+      //  let viewController = storyboard?.instantiateViewControllerWithIdentifier("MessageView")
+    
+      //  self.navigationController?.pushViewController(viewController!, animated: true)
+    
+    
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let DestViewController : MessageView = segue.destinationViewController as! MessageView
+        DestViewController.messageLabelText = texts[(tableView.indexPathForSelectedRow?.item)!]
+    }
 }

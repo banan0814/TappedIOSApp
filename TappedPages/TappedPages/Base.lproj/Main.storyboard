@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Map-->
@@ -31,19 +32,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nM0-eR-WpX">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="nM0-eR-WpX" secondAttribute="trailing" id="4Y6-xy-whI"/>
                             <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="nM0-eR-WpX" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="-24.5" id="87c-ck-9EC"/>
-                            <constraint firstItem="nM0-eR-WpX" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" constant="-49" id="C4b-YZ-6gy"/>
-                            <constraint firstItem="nM0-eR-WpX" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="WXf-xN-kej"/>
+                            <constraint firstItem="nM0-eR-WpX" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="P2R-4C-2hA"/>
+                            <constraint firstItem="nM0-eR-WpX" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="YSt-xb-ysH"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstItem="nM0-eR-WpX" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="elx-nr-nCz"/>
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="nM0-eR-WpX" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="kRE-HI-aAY"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -53,6 +54,7 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="waypoint_map.png" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" title="Map" id="i5B-Xp-QrS"/>
                     <connections>
                         <outlet property="Map" destination="nM0-eR-WpX" id="wYQ-Nm-6WF"/>
                     </connections>
@@ -61,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="441" y="65"/>
         </scene>
-        <!--View Controller-->
+        <!--Message View-->
         <scene sceneID="fyD-5C-j1C">
             <objects>
-                <viewController storyboardIdentifier="1" id="BmQ-vD-bLv" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MessageView" id="BmQ-vD-bLv" customClass="MessageView" customModule="TappedPages" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jwa-mD-K5G"/>
                         <viewControllerLayoutGuide type="bottom" id="c8F-8E-Elp"/>
@@ -73,21 +75,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvj-u2-xF9">
-                                <rect key="frame" x="277" y="323" width="46" height="30"/>
-                                <accessibility key="accessibilityConfiguration" identifier="egygomb"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                            <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="justified" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="17" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xk5-o1-ndV">
+                                <rect key="frame" x="20" y="72" width="560" height="40"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <accessibility key="accessibilityConfiguration">
                             <accessibilityTraits key="traits" staticText="YES"/>
                         </accessibility>
                         <constraints>
-                            <constraint firstItem="c8F-8E-Elp" firstAttribute="top" secondItem="yvj-u2-xF9" secondAttribute="bottom" constant="247" id="PiR-SX-pnP"/>
-                            <constraint firstItem="yvj-u2-xF9" firstAttribute="centerX" secondItem="w0K-Fu-CTL" secondAttribute="centerX" id="fhs-2R-hIY"/>
+                            <constraint firstItem="xk5-o1-ndV" firstAttribute="top" secondItem="jwa-mD-K5G" secondAttribute="bottom" constant="8" symbolic="YES" id="8qb-dd-slt"/>
+                            <constraint firstItem="xk5-o1-ndV" firstAttribute="leading" secondItem="w0K-Fu-CTL" secondAttribute="leadingMargin" id="P4z-oh-uw9"/>
+                            <constraint firstItem="c8F-8E-Elp" firstAttribute="top" secondItem="xk5-o1-ndV" secondAttribute="bottom" constant="439" id="PiZ-gR-CbB"/>
+                            <constraint firstItem="xk5-o1-ndV" firstAttribute="trailing" secondItem="w0K-Fu-CTL" secondAttribute="trailingMargin" id="ZML-Ve-h8M"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="PiZ-gR-CbB"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="xk5-o1-ndV" id="WU3-Mx-qDA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9FZ-8o-b3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -114,6 +128,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="51"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="BmQ-vD-bLv" kind="show" id="19D-3n-g9S"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -122,7 +139,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="Hírek" image="activity_feed.png" id="hQ7-iZ-yEy"/>
+                    <tabBarItem key="tabBarItem" title="News" image="activity_feed.png" id="hQ7-iZ-yEy"/>
                     <navigationItem key="navigationItem" title="Hírek" id="72i-i9-Txp">
                         <barButtonItem key="backBarButtonItem" title="Vissza" id="alh-Jx-gvp"/>
                     </navigationItem>
@@ -155,7 +172,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="sv0-zC-MyK" kind="relationship" relationship="viewControllers" id="4H3-rl-73W"/>
                         <segue destination="xsv-PU-WZx" kind="relationship" relationship="viewControllers" id="K72-zN-T4R"/>
                         <segue destination="vfn-Xo-RHe" kind="relationship" relationship="viewControllers" id="xZw-oI-GYy"/>
                     </connections>
@@ -164,11 +181,28 @@
             </objects>
             <point key="canvasLocation" x="-1188" y="352"/>
         </scene>
-        <!--Hírek-->
+        <!--Map-->
+        <scene sceneID="QVN-wC-KFQ">
+            <objects>
+                <navigationController id="sv0-zC-MyK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="waypoint_map.png" id="TGT-Qk-XGb"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fjo-5y-YiI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="Xc2-HQ-XfF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WPi-He-qsJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-331" y="-69"/>
+        </scene>
+        <!--News-->
         <scene sceneID="pQ3-pT-1xT">
             <objects>
                 <navigationController id="xsv-PU-WZx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Hírek" image="activity_feed.png" id="Vbh-2J-6LK"/>
+                    <tabBarItem key="tabBarItem" title="News" image="activity_feed.png" id="Vbh-2J-6LK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IeC-cc-FXj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -181,7 +215,7 @@
             </objects>
             <point key="canvasLocation" x="-298" y="664"/>
         </scene>
-        <!--Túra-->
+        <!--Trip-->
         <scene sceneID="5vB-n3-Fbn">
             <objects>
                 <viewController id="vfn-Xo-RHe" sceneMemberID="viewController">
@@ -214,7 +248,7 @@
                             <constraint firstItem="eE1-s2-jwW" firstAttribute="centerX" secondItem="Pkg-eE-BtH" secondAttribute="centerX" id="ud4-l1-Hj1"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Túra" image="suitcase.png" id="Lhw-VZ-Sm4"/>
+                    <tabBarItem key="tabBarItem" title="Trip" image="suitcase.png" id="Lhw-VZ-Sm4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="88Y-09-olS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
