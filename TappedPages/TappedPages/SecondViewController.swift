@@ -7,9 +7,17 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class SecondViewController: UIViewController {
 
+    @IBOutlet weak var tripTableView: UITableView!
+    
+    @IBOutlet weak var MapView2: MKMapView!
+    
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +28,7 @@ class SecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
 
 }
 

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A254g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -107,7 +107,7 @@
             </objects>
             <point key="canvasLocation" x="1135" y="780"/>
         </scene>
-        <!--Hírek-->
+        <!--News-->
         <scene sceneID="eQf-Ki-JD6">
             <objects>
                 <tableViewController wantsFullScreenLayout="YES" modalPresentationStyle="formSheet" id="70l-RQ-fV8" customClass="TableViewController" customModule="TappedPages" customModuleProvider="target" sceneMemberID="viewController">
@@ -140,7 +140,7 @@
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="News" image="activity_feed.png" id="hQ7-iZ-yEy"/>
-                    <navigationItem key="navigationItem" title="Hírek" id="72i-i9-Txp">
+                    <navigationItem key="navigationItem" title="News" id="72i-i9-Txp">
                         <barButtonItem key="backBarButtonItem" title="Vissza" id="alh-Jx-gvp"/>
                     </navigationItem>
                     <connections>
@@ -159,6 +159,146 @@
             </objects>
             <point key="canvasLocation" x="441" y="750"/>
         </scene>
+        <!--Trip-->
+        <scene sceneID="KZr-pV-8k9">
+            <objects>
+                <tableViewController id="oDd-AY-pKr" customClass="TripTableView" customModule="TappedPages" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="VPc-0B-xQ7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="OMl-hA-MFZ">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OMl-hA-MFZ" id="gCp-QD-3sh">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="5LH-fI-4L4" kind="show" id="XE1-8n-dmt"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oDd-AY-pKr" id="BO3-f7-bqV"/>
+                            <outlet property="delegate" destination="oDd-AY-pKr" id="Q7a-qH-1VI"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Trip" image="marker.png" id="qFv-OS-5k7"/>
+                    <navigationItem key="navigationItem" title="Trip" id="TFt-gD-BZL"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Po-Gv-E52" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="444" y="1468"/>
+        </scene>
+        <!--Trip-->
+        <scene sceneID="yug-j8-jFz">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ag1-Mj-MuV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="5LH-fI-4L4" customClass="TripView" customModule="TappedPages" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sch-Xx-f1f"/>
+                        <viewControllerLayoutGuide type="bottom" id="dOO-DS-hql"/>
+                    </layoutGuides>
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="qp3-a0-OFA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rdq-dN-CEh">
+                                <rect key="frame" x="-20" y="0.0" width="640" height="551"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSV-OR-ggh">
+                                        <rect key="frame" x="40" y="323" width="560" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogH-Te-wq2">
+                                        <rect key="frame" x="40" y="352" width="560" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="justified" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAF-M3-ZJd">
+                                        <rect key="frame" x="40" y="381" width="560" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xjG-S3-cDV">
+                                        <rect key="frame" x="20" y="0.0" width="600" height="279"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="215" id="cgz-gX-GX3"/>
+                                        </constraints>
+                                    </mapView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5m-3R-Mbc">
+                                        <rect key="frame" x="40" y="282" width="560" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="c5m-3R-Mbc" firstAttribute="leading" secondItem="dSV-OR-ggh" secondAttribute="leading" id="7uT-vY-h52"/>
+                                    <constraint firstItem="dSV-OR-ggh" firstAttribute="top" secondItem="c5m-3R-Mbc" secondAttribute="bottom" constant="8" symbolic="YES" id="EO3-c4-3Sc"/>
+                                    <constraint firstAttribute="trailing" secondItem="xjG-S3-cDV" secondAttribute="trailing" constant="20" id="FGo-EC-8cX"/>
+                                    <constraint firstItem="ogH-Te-wq2" firstAttribute="leading" secondItem="dAF-M3-ZJd" secondAttribute="leading" id="PjN-nM-0Sk"/>
+                                    <constraint firstItem="dSV-OR-ggh" firstAttribute="leading" secondItem="ogH-Te-wq2" secondAttribute="leading" id="TNt-GP-ehs"/>
+                                    <constraint firstItem="xjG-S3-cDV" firstAttribute="top" secondItem="Rdq-dN-CEh" secondAttribute="top" id="W3i-qJ-mcO"/>
+                                    <constraint firstItem="xjG-S3-cDV" firstAttribute="leading" secondItem="Rdq-dN-CEh" secondAttribute="leading" constant="20" id="ZtZ-Yh-XC8"/>
+                                    <constraint firstItem="ogH-Te-wq2" firstAttribute="trailing" secondItem="dAF-M3-ZJd" secondAttribute="trailing" id="cNd-yS-rjh"/>
+                                    <constraint firstItem="c5m-3R-Mbc" firstAttribute="top" secondItem="xjG-S3-cDV" secondAttribute="bottom" constant="3" id="ciC-a2-rid"/>
+                                    <constraint firstItem="xjG-S3-cDV" firstAttribute="centerX" secondItem="Rdq-dN-CEh" secondAttribute="centerX" id="e3W-lO-vn4"/>
+                                    <constraint firstItem="c5m-3R-Mbc" firstAttribute="leading" secondItem="Rdq-dN-CEh" secondAttribute="leading" constant="40" id="eIH-MK-ZNL"/>
+                                    <constraint firstItem="c5m-3R-Mbc" firstAttribute="trailing" secondItem="dSV-OR-ggh" secondAttribute="trailing" id="gaQ-cW-0wf"/>
+                                    <constraint firstAttribute="bottom" secondItem="dAF-M3-ZJd" secondAttribute="bottom" constant="85" id="l7v-hD-Gdb"/>
+                                    <constraint firstItem="ogH-Te-wq2" firstAttribute="top" secondItem="dSV-OR-ggh" secondAttribute="bottom" constant="8" symbolic="YES" id="ndX-TL-gqq"/>
+                                    <constraint firstItem="dAF-M3-ZJd" firstAttribute="top" secondItem="ogH-Te-wq2" secondAttribute="bottom" constant="8" symbolic="YES" id="pnU-1W-0z7"/>
+                                    <constraint firstItem="xjG-S3-cDV" firstAttribute="centerX" secondItem="c5m-3R-Mbc" secondAttribute="centerX" id="uML-GA-xJF"/>
+                                    <constraint firstItem="dSV-OR-ggh" firstAttribute="trailing" secondItem="ogH-Te-wq2" secondAttribute="trailing" id="vpo-2X-4wg"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Rdq-dN-CEh" firstAttribute="top" secondItem="qp3-a0-OFA" secondAttribute="topMargin" id="DBi-n7-1b3"/>
+                            <constraint firstItem="Rdq-dN-CEh" firstAttribute="leading" secondItem="qp3-a0-OFA" secondAttribute="leadingMargin" constant="-40" id="F2j-Fc-cOm"/>
+                            <constraint firstItem="Rdq-dN-CEh" firstAttribute="centerX" secondItem="qp3-a0-OFA" secondAttribute="centerX" id="i9N-sV-8bW"/>
+                            <constraint firstItem="Rdq-dN-CEh" firstAttribute="bottom" secondItem="dOO-DS-hql" secondAttribute="top" id="x2s-qv-bJ2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Trip" id="9md-P9-hir">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="pad-LV-eFv"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="TripDistance" destination="dSV-OR-ggh" id="y00-h5-0KD"/>
+                        <outlet property="TripElevation" destination="ogH-Te-wq2" id="HLP-bk-iEZ"/>
+                        <outlet property="TripLabel" destination="dAF-M3-ZJd" id="n9k-OV-oP4"/>
+                        <outlet property="TripMapview" destination="xjG-S3-cDV" id="xru-9t-XKt"/>
+                        <outlet property="TripTitle" destination="c5m-3R-Mbc" id="Sfu-d8-26S"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1154" y="1546"/>
+        </scene>
+        <!--Trip-->
+        <scene sceneID="RVt-Jz-5NE">
+            <objects>
+                <navigationController id="ZmF-XR-qZW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Trip" image="marker.png" id="B60-Yj-zq5"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SZQ-Bc-kEo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oDd-AY-pKr" kind="relationship" relationship="rootViewController" id="2Pn-rr-cuz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tgF-yb-Lxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-298" y="1442"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -174,7 +314,7 @@
                     <connections>
                         <segue destination="sv0-zC-MyK" kind="relationship" relationship="viewControllers" id="4H3-rl-73W"/>
                         <segue destination="xsv-PU-WZx" kind="relationship" relationship="viewControllers" id="K72-zN-T4R"/>
-                        <segue destination="vfn-Xo-RHe" kind="relationship" relationship="viewControllers" id="xZw-oI-GYy"/>
+                        <segue destination="ZmF-XR-qZW" kind="relationship" relationship="viewControllers" id="RQD-R2-9o3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -196,7 +336,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WPi-He-qsJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-331" y="-69"/>
+            <point key="canvasLocation" x="-298" y="-77"/>
         </scene>
         <!--News-->
         <scene sceneID="pQ3-pT-1xT">
@@ -215,49 +355,10 @@
             </objects>
             <point key="canvasLocation" x="-298" y="664"/>
         </scene>
-        <!--Trip-->
-        <scene sceneID="5vB-n3-Fbn">
-            <objects>
-                <viewController id="vfn-Xo-RHe" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9x5-vb-BKm"/>
-                        <viewControllerLayoutGuide type="bottom" id="H92-hp-htJ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="oLg-7J-tce">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Túra információk" textAlignment="natural" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="eE1-s2-jwW">
-                                <rect key="frame" x="204" y="275" width="192" height="49"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text comes here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pkg-eE-BtH">
-                                <rect key="frame" x="237" y="332" width="127" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Pkg-eE-BtH" firstAttribute="top" secondItem="eE1-s2-jwW" secondAttribute="bottom" constant="8" symbolic="YES" id="4f4-eO-fwa"/>
-                            <constraint firstItem="eE1-s2-jwW" firstAttribute="centerY" secondItem="oLg-7J-tce" secondAttribute="centerY" id="QsC-5i-U8T"/>
-                            <constraint firstItem="eE1-s2-jwW" firstAttribute="centerX" secondItem="oLg-7J-tce" secondAttribute="centerX" id="sf8-fk-jul"/>
-                            <constraint firstItem="eE1-s2-jwW" firstAttribute="centerX" secondItem="Pkg-eE-BtH" secondAttribute="centerX" id="ud4-l1-Hj1"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Trip" image="suitcase.png" id="Lhw-VZ-Sm4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="88Y-09-olS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="239" y="1713"/>
-        </scene>
     </scenes>
     <resources>
         <image name="activity_feed.png" width="32" height="32"/>
-        <image name="suitcase.png" width="32" height="32"/>
+        <image name="marker.png" width="24" height="24"/>
         <image name="waypoint_map.png" width="32" height="32"/>
     </resources>
 </document>
