@@ -195,7 +195,6 @@
         <!--Trip-->
         <scene sceneID="yug-j8-jFz">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ag1-Mj-MuV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="5LH-fI-4L4" customClass="TripView" customModule="TappedPages" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sch-Xx-f1f"/>
@@ -279,6 +278,7 @@
                         <outlet property="TripTitle" destination="c5m-3R-Mbc" id="Sfu-d8-26S"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ag1-Mj-MuV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1154" y="1546"/>
         </scene>
